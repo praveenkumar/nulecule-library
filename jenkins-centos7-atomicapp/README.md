@@ -21,7 +21,7 @@ Run the image. It will automatically use kubernetes as the orchestration provide
         [jenkins]
         image=kumarpraveen/centos-jenkins:latest
         # port on the node where Jenkins over HTTP will be accessible - valid range 30000-32667
-        NODE_PORT=30000
+        NODE_PORT=30001
 
 
 1. Run the application from the current working directory
@@ -50,8 +50,8 @@ Note: You can change the provider to `docker` and the app will be deployed using
 Any of these approaches should create kubernetes replication controllers, pods and services.
 
 Jenkins is web app, to test if its functioning we can access it in browser.
-We have configured the app on ADB port 30000 (see answer.conf). You can access
-the app using the IP of ADB box at port 30000 or by forwarding the port 30000 of ADB box to
+We have configured the app on ADB port 30001 (see answer.conf). You can access
+the app using the IP of ADB box at port 30001 or by forwarding the port 30001 of ADB box to
 host machine port.
 
 To test out if app is running and intialized properly (run following inside ADB)
@@ -82,10 +82,10 @@ for improved security.
 
 ```
 
-To forward port `30000` of ADB box to host machine port `30000`, add following line your Vagrantfile
+To forward port `30001` of ADB box to host machine port `30001`, add following line your Vagrantfile
 
 ```
-config.vm.network "forwarded_port", guest: 30000, host: 30000, auto_correct: true
+config.vm.network "forwarded_port", guest: 30001, host: 30001, auto_correct: true
 
 ```
 
@@ -98,5 +98,5 @@ vagrant reload
 Observe logs as shown above if app is configured and ready to accept connections, once it is ready you should be able to access the app at host browser using address
 
 ```
-http://127.0.0.1:30000
+http://127.0.0.1:30001
 ```
