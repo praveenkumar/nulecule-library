@@ -5,7 +5,7 @@
     "name": "jenkins"
   },
   "spec": {
-    "replicas": 1,
+    "replicas": "$replicas",
     "selector": {
       "app": "jenkins"
     },

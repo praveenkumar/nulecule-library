@@ -7,4 +7,4 @@ provider = kubernetes
 image=kumarpraveen/centos-jenkins:latest
 # port on the node where Jenkins over HTTP will be accessible - valid range
 # 30000-32667
-NODE_PORT=30001
+NODE_PORT=30000

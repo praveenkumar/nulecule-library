@@ -12,6 +12,12 @@ graph:
       - name: image
         description: Jenkins image to be used
         default: kumarpraveen/centos-jenkins:latest
+      - name: replicas
+        description: number of replica to be used
+        default: 1
+        constraints:
+          allowed_patterns: "^[1-9]+$"
+          description: Valid value for replica is a natural number (positive integer)
       - name: NODE_PORT
         description: Node port where Jenkins HTTP service will be forwarded to
         default: 30000
